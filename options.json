@@ -1,8 +1,8 @@
 {
     "info": {
-        "title": "Bhaariya API Swagger",
+        "title": "Mero Vision API Swagger",
         "version": "1.0",
-        "description": "Bhaariya API documentation",
+        "description": "Mero Vision API documentation",
         "termsOfService": "#",
         "license": {
             "name": "MIT",
@@ -21,7 +21,7 @@
     },
     "servers": [
         {
-            "url": "https://api.bhaariya.com/",
+            "url": "https://api.merovision.com/",
             "description": "server"
         }
     ]
