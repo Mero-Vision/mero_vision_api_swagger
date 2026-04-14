@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm list:*)",
-      "Bash(where p2o:*)",
-      "Bash(node -e \"const p = require\\('C:/Users/user/AppData/Roaming/npm/node_modules/postman-to-openapi/package.json'\\); console.log\\(JSON.stringify\\(p.bin\\)\\)\")"
-    ]
-  }
-}
