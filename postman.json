@@ -1016,6 +1016,422 @@
               "response": []
             }
           ]
+        },
+        {
+          "name": "Our Team Designations",
+          "item": [
+            {
+              "name": "store our team designation",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Software Engineer",
+                      "type": "text",
+                      "uuid": "eb341107-3705-4618-9ffe-5a8d35e17056"
+                    },
+                    {
+                      "key": "order",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "ab5a0088-05c8-4585-bb30-84a7f22852ed"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/designations",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "designations"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update designation",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Software Engineer",
+                      "type": "text",
+                      "uuid": "eb341107-3705-4618-9ffe-5a8d35e17056"
+                    },
+                    {
+                      "key": "order",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "ab5a0088-05c8-4585-bb30-84a7f22852ed"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/designations/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "designations",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show all designation",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/designations",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "designations"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete designation",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/designations/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "designations",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Our Team",
+          "item": [
+            {
+              "name": "store our team data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "John Doe",
+                      "type": "text",
+                      "uuid": "614b8af6-269b-47bc-9157-ee18d02f03f4"
+                    },
+                    {
+                      "key": "designation_id",
+                      "value": "5",
+                      "type": "text",
+                      "uuid": "314ed9de-b67a-45bf-a9ac-2fdb429c43ba"
+                    },
+                    {
+                      "key": "order",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "ecdb0038-d1a7-4bdd-bc71-9a8a332bdb78"
+                    },
+                    {
+                      "key": "facebook_link",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "79a54d3f-f635-4443-ad1d-b5a6a7810a20"
+                    },
+                    {
+                      "key": "instagram_link",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3f1ce9af-faa3-46ef-860a-7ae7cc8546bb"
+                    },
+                    {
+                      "key": "linkedin_link",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "38d629c5-4ae1-4c0c-8500-1f97cfe5a4e0"
+                    },
+                    {
+                      "key": "profile_image",
+                      "type": "file",
+                      "uuid": "31f8d206-dbf0-461d-b36b-bce3c6c2beeb",
+                      "src": "/C:/Users/user/Videos/Screenshot 2025-08-23 191844.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/team-members",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "team-members"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update our team",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "John Doe",
+                      "type": "text",
+                      "uuid": "614b8af6-269b-47bc-9157-ee18d02f03f4"
+                    },
+                    {
+                      "key": "designation_id",
+                      "value": "5",
+                      "type": "text",
+                      "uuid": "314ed9de-b67a-45bf-a9ac-2fdb429c43ba"
+                    },
+                    {
+                      "key": "order",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "ecdb0038-d1a7-4bdd-bc71-9a8a332bdb78"
+                    },
+                    {
+                      "key": "facebook_link",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "79a54d3f-f635-4443-ad1d-b5a6a7810a20"
+                    },
+                    {
+                      "key": "instagram_link",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3f1ce9af-faa3-46ef-860a-7ae7cc8546bb"
+                    },
+                    {
+                      "key": "linkedin_link",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "38d629c5-4ae1-4c0c-8500-1f97cfe5a4e0"
+                    },
+                    {
+                      "key": "profile_image",
+                      "type": "file",
+                      "uuid": "31f8d206-dbf0-461d-b36b-bce3c6c2beeb",
+                      "src": "/C:/Users/user/Videos/Screenshot 2025-08-23 191844.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/team-members/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "team-members",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show all our team",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/team-members",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "team-members"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete our team",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/admin/team-members/4",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "team-members",
+                    "4"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     },
@@ -1174,6 +1590,38 @@
                   "path": [
                     "api",
                     "settings"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Our Team",
+          "item": [
+            {
+              "name": "show team members base on designations",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/team",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "team"
                   ]
                 }
               },

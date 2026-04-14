@@ -34,11 +34,14 @@ tags:
   - name: Admin > Blogs
   - name: Admin > Settings
   - name: Admin > Contact Us
+  - name: Admin > Our Team Designations
+  - name: Admin > Our Team
   - name: Website
   - name: Website > FAQ
   - name: Website > Contact Us
   - name: Website > Blogs
   - name: Website > Settings
+  - name: Website > Our Team
 paths:
   /api/admin/auth/login:
     post:
@@ -589,6 +592,228 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/admin/designations:
+    post:
+      tags:
+        - Admin > Our Team Designations
+      summary: store our team designation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Software Engineer
+                order:
+                  type: integer
+                  example: '1'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Our Team Designations
+      summary: show all designation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/designations/{id}:
+    put:
+      tags:
+        - Admin > Our Team Designations
+      summary: update designation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Software Engineer
+                order:
+                  type: integer
+                  example: '1'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Admin > Our Team Designations
+      summary: delete designation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/team-members:
+    post:
+      tags:
+        - Admin > Our Team
+      summary: store our team data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: John Doe
+                designation_id:
+                  type: integer
+                  example: '5'
+                order:
+                  type: integer
+                  example: '1'
+                facebook_link:
+                  type: string
+                instagram_link:
+                  type: string
+                linkedin_link:
+                  type: string
+                profile_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Our Team
+      summary: show all our team
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/team-members/{id}:
+    put:
+      tags:
+        - Admin > Our Team
+      summary: update our team
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: John Doe
+                designation_id:
+                  type: integer
+                  example: '5'
+                order:
+                  type: integer
+                  example: '1'
+                facebook_link:
+                  type: string
+                instagram_link:
+                  type: string
+                linkedin_link:
+                  type: string
+                profile_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/team-members/4:
+    delete:
+      tags:
+        - Admin > Our Team
+      summary: delete our team
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/faqs:
     get:
       tags:
@@ -676,6 +901,24 @@ paths:
       tags:
         - Website > Settings
       summary: show all settings
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/team:
+    get:
+      tags:
+        - Website > Our Team
+      summary: show team members base on designations
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
