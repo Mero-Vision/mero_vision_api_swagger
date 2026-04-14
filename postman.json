@@ -62,12 +62,9 @@
                   }
                 },
                 "url": {
-                  "raw": "https://api.merovision.com/api/admin/auth/login",
-                  "protocol": "https",
+                  "raw": "{{url}}/api/admin/auth/login",
                   "host": [
-                    "api",
-                    "merovision",
-                    "com"
+                    "{{url}}"
                   ],
                   "path": [
                     "api",
@@ -696,6 +693,329 @@
               "response": []
             }
           ]
+        },
+        {
+          "name": "Settings",
+          "item": [
+            {
+              "name": "store setting data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "site_name",
+                      "value": "Mero Vision Pvt. Ltd",
+                      "type": "text",
+                      "uuid": "d8609f9e-3e9b-497e-8c82-88ab34e616e9"
+                    },
+                    {
+                      "key": "site_logo",
+                      "type": "file",
+                      "uuid": "59b913d9-bb5f-42cd-a2a6-2038b5dd9a78",
+                      "src": "/C:/Users/user/Videos/Screenshot 2025-08-16 020628.png"
+                    },
+                    {
+                      "key": "site_email",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "625f3b60-8bc2-4232-bbba-e0f9d6de9f22"
+                    },
+                    {
+                      "key": "site_phone",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "d746d9c1-ea6b-47c3-9996-35d656eb29a5"
+                    },
+                    {
+                      "key": "site_address",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "83e638b4-a6f4-4dce-a57a-96235649b33c"
+                    },
+                    {
+                      "key": "facebook_url",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "b1949222-37ef-4321-b7e4-98263e06f6df"
+                    },
+                    {
+                      "key": "instagram_url",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "f859aba5-1a5e-451d-a3b9-6dc099c71f9c"
+                    },
+                    {
+                      "key": "twitter_url",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "d2632051-3b1a-4c5a-b6ca-e54dae74e94c"
+                    },
+                    {
+                      "key": "linkedin_url",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "021586ff-8ddd-4f92-a278-6873d9040b01"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/settings",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "settings"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show all settings",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/settings",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "settings"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete setting",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/settings/{keys}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "settings",
+                    "{keys}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Contact Us",
+          "item": [
+            {
+              "name": "show all contact us",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/contacts?pagination_limit=10&search_keyword=Saugat",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "contacts"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination_limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search_keyword",
+                      "value": "Saugat"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show single contact details",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/contacts/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "contacts",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "read contact message",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/admin/contacts/{id}/read",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "contacts",
+                    "{id}",
+                    "read"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete contact messages",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/contacts/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "contacts",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     },
@@ -707,35 +1027,153 @@
           "item": [
             {
               "name": "show all faq",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
               "request": {
                 "auth": {
-                  "type": "bearer",
-                  "bearer": [
-                    {
-                      "key": "token",
-                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiYWRtaW5AcmVjcnV6ZW4uY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzczNjczODcxLCJleHAiOjE3NzQyNzg2NzF9.c-U0cR_kJC64zAU5nhW2MlteXXfx1HoN_IMsKkOdfmk",
-                      "type": "string"
-                    }
-                  ]
+                  "type": "noauth"
                 },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"question\": \"What is Recruzen?\",\r\n  \"answer\": \"Recruzen is an HR and IT company management platform.\",\r\n  \"order\": 1\r\n}"
-                },
                 "url": {
-                  "raw": "localhost:4000/api/faqs",
+                  "raw": "{{url}}/api/faqs",
                   "host": [
-                    "localhost"
+                    "{{url}}"
                   ],
-                  "port": "4000",
                   "path": [
                     "api",
                     "faqs"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Contact Us",
+          "item": [
+            {
+              "name": "store contact us data",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Saugat Gurung",
+                      "type": "text",
+                      "uuid": "506b055c-eb06-479c-96cf-c09a73b8e20e"
+                    },
+                    {
+                      "key": "email",
+                      "value": "sauagat@gmail.com",
+                      "type": "text",
+                      "uuid": "e8c3de70-5199-4d67-99a0-d30515538f31"
+                    },
+                    {
+                      "key": "contact_number",
+                      "value": "343546565",
+                      "type": "text",
+                      "uuid": "d3bca1c1-ab5c-4842-bd4b-1cfc7f6f6fa1"
+                    },
+                    {
+                      "key": "message",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "1370d434-612c-4343-8904-dedd2c563002"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/contact",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contact"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Blogs",
+          "item": [
+            {
+              "name": "show all blogs",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/blogs?pagination_limit=10&search_keyword",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "blogs"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination_limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search_keyword",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show single blog data",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/blogs/{slug}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "blogs",
+                    "{slug}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Settings",
+          "item": [
+            {
+              "name": "show all settings",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/settings",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "settings"
                   ]
                 }
               },

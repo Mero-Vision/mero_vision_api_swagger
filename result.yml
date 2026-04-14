@@ -23,14 +23,22 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
 tags:
   - name: Admin
   - name: Admin > Auth
   - name: Admin > Faq
   - name: Admin > Blog Categories
   - name: Admin > Blogs
+  - name: Admin > Settings
+  - name: Admin > Contact Us
   - name: Website
   - name: Website > FAQ
+  - name: Website > Contact Us
+  - name: Website > Blogs
+  - name: Website > Settings
 paths:
   /api/admin/auth/login:
     post:
@@ -404,13 +412,270 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /000/api/faqs:
+  /api/admin/settings:
+    post:
+      tags:
+        - Admin > Settings
+      summary: store setting data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                site_name:
+                  type: string
+                  example: Mero Vision Pvt. Ltd
+                site_logo:
+                  type: string
+                  format: binary
+                site_email:
+                  type: string
+                site_phone:
+                  type: string
+                site_address:
+                  type: string
+                facebook_url:
+                  type: string
+                instagram_url:
+                  type: string
+                twitter_url:
+                  type: string
+                linkedin_url:
+                  type: string
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Settings
+      summary: show all settings
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/settings/{keys}:
+    delete:
+      tags:
+        - Admin > Settings
+      summary: delete setting
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: keys
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/contacts:
+    get:
+      tags:
+        - Admin > Contact Us
+      summary: show all contact us
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+          example: Saugat
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/contacts/{id}:
+    get:
+      tags:
+        - Admin > Contact Us
+      summary: show single contact details
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Admin > Contact Us
+      summary: delete contact messages
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/contacts/{id}/read:
+    patch:
+      tags:
+        - Admin > Contact Us
+      summary: read contact message
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/faqs:
     get:
       tags:
         - Website > FAQ
       summary: show all faq
       security:
-        - bearerAuth: []
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/contact:
+    post:
+      tags:
+        - Website > Contact Us
+      summary: store contact us data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Saugat Gurung
+                email:
+                  type: string
+                  example: sauagat@gmail.com
+                contact_number:
+                  type: integer
+                  example: '343546565'
+                message:
+                  type: string
+                  example: hy
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/blogs:
+    get:
+      tags:
+        - Website > Blogs
+      summary: show all blogs
+      parameters:
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/blogs/{slug}:
+    get:
+      tags:
+        - Website > Blogs
+      summary: show single blog data
+      parameters:
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/settings:
+    get:
+      tags:
+        - Website > Settings
+      summary: show all settings
       responses:
         '200':
           description: Successful response
