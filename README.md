@@ -8,7 +8,7 @@
 
 3. Run `make doc` in terminal to generate openApi.
 
-# 4. View Api in : https://mero-vision.github.io/skulix_api_swagger/
+# 4. View Api in : https://mero-vision.github.io/mero_vision_api_swagger/
 
 #### Reference `https://joolfe.github.io/postman-to-openapi/`
 
