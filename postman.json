@@ -144,7 +144,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{url}}/api/admin/faqs/{id}",
+                  "raw": "{{url}}/api/admin/faqs/1",
                   "host": [
                     "{{url}}"
                   ],
@@ -152,7 +152,7 @@
                     "api",
                     "admin",
                     "faqs",
-                    "{id}"
+                    "1"
                   ]
                 }
               },
@@ -464,7 +464,7 @@
                   "formdata": [
                     {
                       "key": "title",
-                      "value": "hy3",
+                      "value": "hy5",
                       "type": "text",
                       "uuid": "4ba35cfc-ab48-4c19-8ccf-5974412411b3"
                     },
@@ -774,6 +774,18 @@
                       "value": "",
                       "type": "text",
                       "uuid": "021586ff-8ddd-4f92-a278-6873d9040b01"
+                    },
+                    {
+                      "key": "privacy_policy",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "e9b1c08d-2997-4e5e-8bba-fa7938da5ec5"
+                    },
+                    {
+                      "key": "terms_conditions",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "98825f42-9133-40cf-9952-dea04e270527"
                     }
                   ]
                 },
@@ -1430,6 +1442,766 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "show designation with team members",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/team",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "team"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "User",
+          "item": [
+            {
+              "name": "show user detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"admin@merovision.com\",\r\n  \"password\": \"Admin@123\"\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/user/1",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "user",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Newsletter",
+          "item": [
+            {
+              "name": "show newsletter data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "hy@gmail.com",
+                      "type": "text",
+                      "uuid": "0e7bc56f-e930-4ee3-bb21-c7b7b0de72e6"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/newsletter",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "newsletter"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Testimonial",
+          "item": [
+            {
+              "name": "store testimonial data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Hy",
+                      "type": "text",
+                      "uuid": "3e0d9957-6e29-4806-8c00-334d33a1a32c"
+                    },
+                    {
+                      "key": "designation",
+                      "value": "CEO",
+                      "type": "text",
+                      "uuid": "424f6b54-f7e0-4c8c-a41c-e671034b1f80"
+                    },
+                    {
+                      "key": "company",
+                      "value": "Mero",
+                      "type": "text",
+                      "uuid": "7a15139e-d414-4722-aa9e-128f8dd16a81"
+                    },
+                    {
+                      "key": "review",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "e6524d88-286d-475a-9a34-0d813a6dbd5e"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "5",
+                      "type": "text",
+                      "uuid": "90fa7ac0-e6a0-4d29-b9f4-462a200e41f9"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "dff2be2d-46bd-4da6-9d7b-9593308a9a5b",
+                      "src": "/C:/Users/user/Videos/Screenshot 2025-08-16 020628.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/testimonials",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "testimonials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update testimonial data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Hy",
+                      "type": "text",
+                      "uuid": "3e0d9957-6e29-4806-8c00-334d33a1a32c"
+                    },
+                    {
+                      "key": "designation",
+                      "value": "CEO",
+                      "type": "text",
+                      "uuid": "424f6b54-f7e0-4c8c-a41c-e671034b1f80"
+                    },
+                    {
+                      "key": "company",
+                      "value": "Mero",
+                      "type": "text",
+                      "uuid": "7a15139e-d414-4722-aa9e-128f8dd16a81"
+                    },
+                    {
+                      "key": "review",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "e6524d88-286d-475a-9a34-0d813a6dbd5e"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "5",
+                      "type": "text",
+                      "uuid": "90fa7ac0-e6a0-4d29-b9f4-462a200e41f9"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "dff2be2d-46bd-4da6-9d7b-9593308a9a5b",
+                      "src": "/C:/Users/user/Videos/Screenshot 2025-08-16 020628.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/testimonials/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "testimonials",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show all testimonial data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/testimonials",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "testimonials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "single show testimonial data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/testimonials/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "testimonials",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete testimonial",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/admin/testimonials/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "testimonials",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Gei in touch",
+          "item": [
+            {
+              "name": "show all get in touch data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "363cd743-ac72-411c-94e2-4e1334672c05"
+                    },
+                    {
+                      "key": "email",
+                      "value": "hy@gmail.com",
+                      "type": "text",
+                      "uuid": "ffd62298-5fd6-4ceb-8bb2-6cf91d852af2"
+                    },
+                    {
+                      "key": "contact_number",
+                      "value": "45436456",
+                      "type": "text",
+                      "uuid": "e203184e-c3ce-4262-9e36-2935452b8574"
+                    },
+                    {
+                      "key": "service",
+                      "value": "web_development",
+                      "type": "text",
+                      "uuid": "edef4670-47d5-470b-a180-fffa206917db"
+                    },
+                    {
+                      "key": "message",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "99aa21d8-16a1-4972-8bab-e7a067f1d687"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/get-in-touch",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "get-in-touch"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "read get in touch",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/admin/get-in-touch/{id}/read",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "get-in-touch",
+                    "{id}",
+                    "read"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete get in touch data",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/admin/get-in-touch/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "get-in-touch",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Clients",
+          "item": [
+            {
+              "name": "store client details",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Mero Vision Pvt. Ltd",
+                      "type": "text",
+                      "uuid": "363cd743-ac72-411c-94e2-4e1334672c05"
+                    },
+                    {
+                      "key": "logo",
+                      "type": "file",
+                      "uuid": "549c3adf-b311-4431-a633-3bdaf8a60737",
+                      "src": "/Users/hanciephago/Desktop/classmate-long-book-single-line-80-pages-297-mm-x-210-mm-pack-of-3-1000x1000.webp"
+                    },
+                    {
+                      "key": "website",
+                      "value": "mero.com",
+                      "type": "text",
+                      "uuid": "d30d6c7d-ca6e-484f-a396-10b2fb8a3d89"
+                    },
+                    {
+                      "key": "order_no",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "3783b331-36f0-4a70-9fb6-0f51ef599ff9"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/clients",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "clients"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update  client details",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Mero Vision Pvt. Ltd",
+                      "type": "text",
+                      "uuid": "363cd743-ac72-411c-94e2-4e1334672c05"
+                    },
+                    {
+                      "key": "logo",
+                      "type": "file",
+                      "uuid": "549c3adf-b311-4431-a633-3bdaf8a60737",
+                      "src": "/Users/hanciephago/Desktop/classmate-long-book-single-line-80-pages-297-mm-x-210-mm-pack-of-3-1000x1000.webp"
+                    },
+                    {
+                      "key": "website",
+                      "value": "mero.com",
+                      "type": "text",
+                      "uuid": "d30d6c7d-ca6e-484f-a396-10b2fb8a3d89"
+                    },
+                    {
+                      "key": "order_no",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "3783b331-36f0-4a70-9fb6-0f51ef599ff9"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/admin/clients/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "clients",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show all client data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/clients",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "clients"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show single client data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/clients/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "clients",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete client",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/admin/clients/{id}",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "clients",
+                    "{id}"
+                  ]
+                }
+              },
+              "response": []
             }
           ]
         }
@@ -1622,6 +2394,221 @@
                   "path": [
                     "api",
                     "team"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Chatbot",
+          "item": [
+            {
+              "name": "chatbot message",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \"message\": \"Recruzen\", \"sessionId\": \"optional\" }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/chatbot/message",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "chatbot",
+                    "message"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Newsletter",
+          "item": [
+            {
+              "name": "store newsletter email data",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "hy@gmail.com",
+                      "type": "text",
+                      "uuid": "0e7bc56f-e930-4ee3-bb21-c7b7b0de72e6"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/newsletter/subscribe",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "newsletter",
+                    "subscribe"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Testimonial",
+          "item": [
+            {
+              "name": "show all testimonial",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/testimonials",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "testimonials"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Get in touch",
+          "item": [
+            {
+              "name": "store get in touch",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "363cd743-ac72-411c-94e2-4e1334672c05"
+                    },
+                    {
+                      "key": "email",
+                      "value": "hy@gmail.com",
+                      "type": "text",
+                      "uuid": "ffd62298-5fd6-4ceb-8bb2-6cf91d852af2"
+                    },
+                    {
+                      "key": "contact_number",
+                      "value": "45436456",
+                      "type": "text",
+                      "uuid": "e203184e-c3ce-4262-9e36-2935452b8574"
+                    },
+                    {
+                      "key": "service",
+                      "value": "web_development",
+                      "type": "text",
+                      "uuid": "edef4670-47d5-470b-a180-fffa206917db"
+                    },
+                    {
+                      "key": "message",
+                      "value": "hy",
+                      "type": "text",
+                      "uuid": "99aa21d8-16a1-4972-8bab-e7a067f1d687"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/get-in-touch",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "get-in-touch"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Client",
+          "item": [
+            {
+              "name": "show all client data",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/clients",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clients"
                   ]
                 }
               },

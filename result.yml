@@ -36,12 +36,22 @@ tags:
   - name: Admin > Contact Us
   - name: Admin > Our Team Designations
   - name: Admin > Our Team
+  - name: Admin > User
+  - name: Admin > Newsletter
+  - name: Admin > Testimonial
+  - name: Admin > Gei in touch
+  - name: Admin > Clients
   - name: Website
   - name: Website > FAQ
   - name: Website > Contact Us
   - name: Website > Blogs
   - name: Website > Settings
   - name: Website > Our Team
+  - name: Website > Chatbot
+  - name: Website > Newsletter
+  - name: Website > Testimonial
+  - name: Website > Get in touch
+  - name: Website > Client
 paths:
   /api/admin/auth/login:
     post:
@@ -99,7 +109,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/admin/faqs/{id}:
+  /api/admin/faqs/1:
     put:
       tags:
         - Admin > Faq
@@ -115,17 +125,12 @@ paths:
                 order: 1
       security:
         - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+  /api/admin/faqs/{id}:
     delete:
       tags:
         - Admin > Faq
@@ -269,7 +274,7 @@ paths:
               properties:
                 title:
                   type: string
-                  example: hy3
+                  example: hy5
                 content:
                   type: string
                   example: >-
@@ -445,6 +450,10 @@ paths:
                 twitter_url:
                   type: string
                 linkedin_url:
+                  type: string
+                privacy_policy:
+                  type: string
+                terms_conditions:
                   type: string
       security:
         - bearerAuth: []
@@ -814,6 +823,391 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/admin/team:
+    get:
+      tags:
+        - Admin > Our Team
+      summary: show designation with team members
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/user/1:
+    get:
+      tags:
+        - Admin > User
+      summary: show user detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/newsletter:
+    get:
+      tags:
+        - Admin > Newsletter
+      summary: show newsletter data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/testimonials:
+    post:
+      tags:
+        - Admin > Testimonial
+      summary: store testimonial data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hy
+                designation:
+                  type: string
+                  example: CEO
+                company:
+                  type: string
+                  example: Mero
+                review:
+                  type: string
+                  example: hy
+                rating:
+                  type: integer
+                  example: '5'
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Testimonial
+      summary: show all testimonial data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/testimonials/{id}:
+    put:
+      tags:
+        - Admin > Testimonial
+      summary: update testimonial data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hy
+                designation:
+                  type: string
+                  example: CEO
+                company:
+                  type: string
+                  example: Mero
+                review:
+                  type: string
+                  example: hy
+                rating:
+                  type: integer
+                  example: '5'
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Testimonial
+      summary: single show testimonial data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Admin > Testimonial
+      summary: delete testimonial
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/get-in-touch:
+    get:
+      tags:
+        - Admin > Gei in touch
+      summary: show all get in touch data
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/get-in-touch/{id}/read:
+    patch:
+      tags:
+        - Admin > Gei in touch
+      summary: read get in touch
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/get-in-touch/{id}:
+    delete:
+      tags:
+        - Admin > Gei in touch
+      summary: delete get in touch data
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/clients:
+    post:
+      tags:
+        - Admin > Clients
+      summary: store client details
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Mero Vision Pvt. Ltd
+                logo:
+                  type: string
+                  format: binary
+                website:
+                  type: string
+                  example: mero.com
+                order_no:
+                  type: integer
+                  example: '1'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Clients
+      summary: show all client data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/admin/clients/{id}:
+    put:
+      tags:
+        - Admin > Clients
+      summary: update  client details
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Mero Vision Pvt. Ltd
+                logo:
+                  type: string
+                  format: binary
+                website:
+                  type: string
+                  example: mero.com
+                order_no:
+                  type: integer
+                  example: '1'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > Clients
+      summary: show single client data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Admin > Clients
+      summary: delete client
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/faqs:
     get:
       tags:
@@ -911,6 +1305,126 @@ paths:
       tags:
         - Website > Our Team
       summary: show team members base on designations
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chatbot/message:
+    post:
+      tags:
+        - Website > Chatbot
+      summary: chatbot message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                message: Recruzen
+                sessionId: optional
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/newsletter/subscribe:
+    post:
+      tags:
+        - Website > Newsletter
+      summary: store newsletter email data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hy@gmail.com
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/testimonials:
+    get:
+      tags:
+        - Website > Testimonial
+      summary: show all testimonial
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/get-in-touch:
+    post:
+      tags:
+        - Website > Get in touch
+      summary: store get in touch
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: hy
+                email:
+                  type: string
+                  example: hy@gmail.com
+                contact_number:
+                  type: integer
+                  example: '45436456'
+                service:
+                  type: string
+                  example: web_development
+                message:
+                  type: string
+                  example: hy
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/clients:
+    get:
+      tags:
+        - Website > Client
+      summary: show all client data
       security:
         - noauthAuth: []
       parameters:
